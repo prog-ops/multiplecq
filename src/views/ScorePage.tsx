@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '../components/Button';
 import {useAppDispatch, useAppSelector} from '../store';
 import {setStage} from '../store/features/game';
+import {Answer} from "../models/Quiz";
 
 const ScorePage: React.FC = () => {
     const dispatch = useAppDispatch();
@@ -19,10 +20,20 @@ const ScorePage: React.FC = () => {
             </div>
             {answers.length !== 0 && (
                 <div className="scorepage">
-                    {answers.map((answer) => (
+                    {answers.map((answer: Answer) => (
                         <div key={answer.question} className="answer">
-                            <p className="score-question" dangerouslySetInnerHTML={{__html: answer.question}}></p>
-                            <p className={`correct-incorrect-answer ${answer.correct_answer === answer.answer ? 'correct-green' : 'correct-red'}`}>{answer.answer}</p>
+                            <p
+                                className="score-question"
+                                dangerouslySetInnerHTML={{__html: answer.question}}>
+                            </p>
+                            <p
+                                className={`correct-incorrect-answer ${
+                                    answer.correct_answer === answer.answer 
+                                        ? 'correct-green' 
+                                        : 'correct-red'}`}
+                            >
+                                {answer.answer}
+                            </p>
                         </div>
                     ))}
                 </div>

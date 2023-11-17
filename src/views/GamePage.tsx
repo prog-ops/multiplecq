@@ -47,7 +47,7 @@ const GamePage: React.FC = () => {
                 <p className="correct-question-desc">{currentQuestionDescription}</p>
 
                 <div className="action-container-boolean">
-                    {availableAnswers.map((answer) => (
+                    {availableAnswers.map((answer: string) => (
                         <Button key={answer} className="btn-primary" onClick={() => {
                             handleAnswer(answer);
                         }}>
