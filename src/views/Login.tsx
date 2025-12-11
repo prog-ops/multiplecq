@@ -91,7 +91,7 @@ export default function Login() {
             ) : (
                 <form className="form-login" onSubmit={onSubmit}>
                     {error && <p className="error">{error}</p>}
-                    {error ? null : <h2>Enter your username and password</h2>}
+                    {error ? null : <h2>Enter "admin" username and "password" password</h2>}
                     <input
                         type="text"
                         placeholder="username"
